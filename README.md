@@ -75,7 +75,7 @@ All model behavior lives in `lib/ai-config.js`:
 
 ```js
 export const MODEL_CONFIG = {
-  model: "llama-3.3-70b-versatile", // provider's model identifier
+  model: "openai/gpt-oss-120b", // provider's model identifier
   maxTokens: 1000,                  // response length cap
 };
 
