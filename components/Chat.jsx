@@ -59,7 +59,7 @@ export default function Chat() {
     if (isPinnedToBottom) {
       container.scrollTo({ top: container.scrollHeight, behavior: "smooth" });
     }
-  }, [messages, isLoading, isPinnedToBottom]);
+  }, [messages, isLoading, isPinnedToBottom, error]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -144,6 +144,15 @@ export default function Chat() {
                 </div>
               );
             })}
+
+            {error ? (
+              <div
+                role="alert"
+                className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200"
+              >
+                The response couldn&apos;t be generated. Please try again.
+              </div>
+            ) : null}
           </div>
 
           {!isPinnedToBottom ? (
